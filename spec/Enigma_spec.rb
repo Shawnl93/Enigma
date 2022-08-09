@@ -1,15 +1,11 @@
 require 'date'
 require './lib/enigma'
-require './lib/Key'
+require './lib/key'
 
 describe Enigma do
   before :each do
-    @enigma = Enigma.new("Cypher")
+    @enigma = Enigma.new
     @key = Key.new
-  end
-
-  it "has a name" do
-    expect(@enigma.name).to eq("Cypher")
   end
 
   it "can encrypt" do
@@ -49,7 +45,7 @@ describe Enigma do
     expect(@enigma.decrypt("okjdvfugyrb", "02715", @key.date)).to eq(expected_hash)
   end
 
-  it "encrypt a message (generates random key and uses today's date)" do
+  xit "encrypt a message (generates random key and uses today's date)" do
     expected_hash = {
       encrypt: "okjdvfugyrb",
       key: rkey = @key.rng,

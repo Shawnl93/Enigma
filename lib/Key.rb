@@ -101,12 +101,11 @@ class Key
   end
 
   def date
-    Date.today.strftime("%d%m%y")
+  date = Date.today.strftime("%d%m%y")
   end
 
   def rng
   number = rand(0..99999).to_s.rjust(5,'0')
-  number
   end
 
 end
