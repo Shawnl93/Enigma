@@ -8,7 +8,7 @@ class Enigma
   end
 
   def encrypt(message, key, date)
-    @key.gen_key
+    @key.gen_key(key)
     @key.date_encrypt(date)
     code = @key.ecode
     testing = @key.encrypting(message, code)
@@ -22,7 +22,8 @@ class Enigma
   end
 
   def decrypt(message, key, date)
-    @key.gen_key
+    @key.gen_key(key)
+    require "pry"; binding.pry
     @key.date_encrypt(date)
     code = @key.ecode
     testing = @key.decrypting(message, code)
