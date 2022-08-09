@@ -45,4 +45,8 @@ describe Key do
     expect(@key.decrypting("keder ohulw", key)).to eq("hello world")
 
   end
+
+  it "can tell todays date" do
+    expect(@key.date).to eq()
+  end
 end

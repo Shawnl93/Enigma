@@ -66,6 +66,7 @@ class Key
     end
     mixed_word
   end
+
   def decrypting(message, key)
     mixed_word = ""
     position = 0
@@ -99,6 +100,10 @@ class Key
 
   def shift_d(key)
     key[3]
+  end
+
+  def date
+    Date.today.strftime("%D")
   end
 
 end

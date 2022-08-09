@@ -21,7 +21,7 @@ class Enigma
     }
   end
 
-  def decrypt()
+  def decrypt(message, key, date)
     @key.gen_key
     @key.date_encrypt(date)
     code = @key.ecode
@@ -29,10 +29,9 @@ class Enigma
 
 
     hash = {
-      :encryption => testing,
+      :decryption => testing,
       :key => key,
       :date => date
     }
-    
   end
 end
