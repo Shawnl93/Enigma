@@ -33,5 +33,6 @@ class Enigma
       :key => key,
       :date => date
     }
+    
   end
 end
