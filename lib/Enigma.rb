@@ -23,7 +23,6 @@ class Enigma
 
   def decrypt(message, key, date)
     @key.gen_key(key)
-    require "pry"; binding.pry
     @key.date_encrypt(date)
     code = @key.ecode
     testing = @key.decrypting(message, code)

@@ -48,4 +48,14 @@ describe Enigma do
     }
     expect(@enigma.decrypt("okjdvfugyrb", "02715", @key.date)).to eq(expected_hash)
   end
+
+  it "encrypt a message (generates random key and uses today's date)" do
+    expected_hash = {
+      encrypt: "okjdvfugyrb",
+      key: rkey = @key.rng,
+      date: @key.date
+    }
+    expect(@enigma.encrypt("hello world", rkey, @key.date)).to eq(expected_hash)
+
+  end
 end
