@@ -4,6 +4,7 @@ class Enigma
 
   def initialize(name)
     @name = name
+    @key = Key.new
   end
 
   def encrypt(message, key, date)

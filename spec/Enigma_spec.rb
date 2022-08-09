@@ -1,5 +1,6 @@
 require 'date'
 require './lib/enigma'
+require './lib/Key'
 
 describe Enigma do
   before :each do
