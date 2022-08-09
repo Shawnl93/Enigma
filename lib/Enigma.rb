@@ -23,7 +23,7 @@ class Enigma
     }
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key = @key.rng, date = @key.date)
     @key.gen_key(key)
     @key.date_encrypt(date)
     code = @key.ecode
