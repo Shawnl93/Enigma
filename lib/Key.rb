@@ -41,6 +41,7 @@ class Key
     end
     if last_four.slice(3)
       @d << last_four.slice(3)
+      
     end
 
   end
