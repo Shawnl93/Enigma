@@ -12,6 +12,11 @@ describe Enigma do
   end
 
   it "can ecrypt" do
-    expect(@enigma.encrypt("hello world", "02715", "040895")).to eq({})
+    expected_hash = {
+    encryption: "keder ohulw",
+    key: "02715",
+    date: "040895"
+  }
+    expect(@enigma.encrypt("hello world", "02715", "040895")).to eq(expected_hash)
   end
 end

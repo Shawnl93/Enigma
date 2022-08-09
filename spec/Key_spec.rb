@@ -14,27 +14,35 @@ describe Key do
   end
 
   it "it generate 5 digit numbers " do
-    expect(@key.generate).to be_a(Array)
+    expect(@key.gen_key).to be_a(Array)
   end
 
   it "has offsets" do
-    expect(@key.squared("040895")).to be_a(Array)
+    expect(@key.date_encrypt("040895")).to be_a(Array)
   end
 
   it "can encrypt message" do
-    @key.generate
-    @key.squared("040895")
+    @key.gen_key
+    @key.date_encrypt("040895")
     expect(@key.ecode).to be_a(Array)
   end
 
-  it "can figure out messages" do
-    @key.generate
-    @key.squared("040895")
+  it "can mix up messages" do
+    @key.gen_key
+    @key.date_encrypt("040895")
     key = @key.ecode
-    expect(@key.secret("hello world", key)).to eq("keder ohulw")
+    expect(@key.encrypting("HELLO WORLD", key)).to eq("keder ohulw")
   end
 
   it "test" do
     expect(@key.alphabet_index("h")).to eq(7)
+  end
+
+  it "can figure out message" do
+    @key.gen_key
+    @key.date_encrypt("040895")
+    key = @key.ecode
+    expect(@key.decrypting("keder ohulw", key)).to eq("hello world")
+
   end
 end
