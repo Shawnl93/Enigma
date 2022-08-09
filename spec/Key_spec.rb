@@ -47,6 +47,6 @@ describe Key do
   end
 
   it "can tell todays date" do
-    expect(@key.date).to eq()
+    expect(@key.date).to eq("090822")
   end
 end

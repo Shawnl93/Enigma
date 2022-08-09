@@ -34,4 +34,5 @@ class Enigma
       :date => date
     }
   end
+
 end

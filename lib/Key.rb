@@ -25,6 +25,20 @@ class Key
      if created_key.slice(3..4)
        @d << created_key.slice(3..4)
       end
+    # created_key = "02715"
+    # # rand(0..99999).to_s.rjust(5,'0')
+    #  if created_key.slice(0..1)
+    #    @a << created_key.slice(0..1)
+    #   end
+    #  if created_key.slice(1..2)
+    #   @b << created_key.slice(1..2)
+    #   end
+    #  if created_key.slice(2..3)
+    #    @c << created_key.slice(2..3)
+    #   end
+    #  if created_key.slice(3..4)
+    #    @d << created_key.slice(3..4)
+    #   end
   end
 
   def date_encrypt(ddmmyy)
@@ -103,7 +117,7 @@ class Key
   end
 
   def date
-    Date.today.strftime("%D")
+    Date.today.strftime("%d%m%y")
   end
 
 end
