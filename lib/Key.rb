@@ -10,9 +10,7 @@ class Key
     @d = []
   end
 
-  def gen_key
-    created_key = "02715"
-    # rand(0..99999).to_s.rjust(5,'0')
+  def gen_key(created_key)
      if created_key.slice(0..1)
        @a << created_key.slice(0..1)
       end
@@ -66,6 +64,7 @@ class Key
     end
     mixed_word
   end
+
   def decrypting(message, key)
     mixed_word = ""
     position = 0
@@ -99,6 +98,15 @@ class Key
 
   def shift_d(key)
     key[3]
+  end
+
+  def date
+    Date.today.strftime("%d%m%y")
+  end
+
+  def rng
+  number = rand(0..99999).to_s.rjust(5,'0')
+  number
   end
 
 end
