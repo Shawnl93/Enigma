@@ -1,4 +1,4 @@
-require './lib/Key'
+require './lib/key'
 
 describe Key do
   before :each do
